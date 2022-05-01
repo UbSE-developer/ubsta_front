@@ -1,9 +1,14 @@
 import React from 'react';
+import Footer from '../common/Footer';
+import Header from '../common/Header'
+import MainContents from './MainContents';
 
 const Main = () => {
     return (
         <div>
-            <input type="text" placeholder="검색"/>
+            <Header/>
+            <MainContents/>
+            <Footer/>
         </div>
     );
 };
