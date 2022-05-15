@@ -1,0 +1,42 @@
+
+.searchBox::-webkit-input-placeholder{
+    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
+    background-size: contain;
+    background-position:  1px center;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-indent: 100;
+  }
+
+.replyBox{
+    width: 100%;
+    border: 0px;
+}
+
+.replyBox:focus{
+    outline: none;
+}
+
+.replyBtn{
+    background-color: white;
+    color: blue;
+    width: 100px;
+    border: 0px;
+}
+
+.replyBtn:focus{
+    outline: none;
+}
+/* .replyBox::-webkit-input-placeholder{
+    background-image: url(https://cdn1.iconfinder.com/data/icons/hawcons/32/698627-icon-111-search-256.png) ;
+    background-size: contain;
+    background-position:  1px center;
+    background-repeat: no-repeat;
+    text-align: center;
+    text-indent: 100;
+  } */
+
+.content{
+    width:"100%";
+    background-image: url("../../assets/images/sample/SampleContentImage.jpeg");
+}
