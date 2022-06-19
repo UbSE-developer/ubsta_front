@@ -1,3 +1,4 @@
+export const MAIN_URL = '/main';
 export const BASE_URL = 'http://192.168.0.14:4000';
 
 //회원가입
