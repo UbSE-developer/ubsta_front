@@ -8,6 +8,7 @@
  
  import Login from '../page/login/Login';
  import Main from '../page/main/Main';
+ import Sign from '../page/login/Sign'
  
  const Router = () => {
      return (
@@ -15,6 +16,7 @@
              <Routes>
                  <Route path='/' element={<Login/>}/>
                  <Route path='/main' element={<Main/>}/>
+                 <Route path='/sign' element={<Sign/>}/>
              </Routes>
          </BrowserRouter>
      );

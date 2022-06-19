@@ -1,4 +1,4 @@
-import React, { Fragment } from 'react';
+import React, { Fragment, useEffect } from 'react';
 import styled from "styled-components";
 import phoneImage from "../../assets/images/phone.png";
 import loginLogo from "../../assets/images/logo.png"
@@ -8,6 +8,8 @@ import loginAnimate3 from "../../assets/images/loginAnimate3.png";
 import loginAnimate4 from "../../assets/images/loginAnimate4.png";
 import Footer from '../common/Footer';
 import FaceBookImage from "../../assets/images/facebook.png";
+import AppDown from './AppDown';
+import { Link } from 'react-router-dom';
 
 
 const MainDiv = styled.div`
@@ -50,8 +52,19 @@ const LoginDiv = styled.div`
     align-items: center;
     margin: -5 0 0 -30px;
     padding: 10px 0;
-    width: 38%;
-    height: 100%;
+    width: 100%;
+    height: 63%;
+`
+
+const SignDiv = styled.div`
+    border: 1px solid rgba(var(--b6a,219,219,219),1);
+    background-color: rgba(var(--d87,255,255,255),1);
+    border-radius: 1px;
+    align-items: center;
+    width: 100%;
+    height: 10%;
+    margin-top: 10px;
+    line-height : 60px;
 `
 
 const LoginInput = styled.input`
@@ -81,7 +94,6 @@ const LoginButton = styled.button`
     border-radius: 5px;
     margin-top: 10px;
     font-family: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,Helvetica,Arial,sans-serif;
-    
 `
 
 const BlankDiv = styled.div`
@@ -91,9 +103,17 @@ const BlankDiv = styled.div`
     font-weight: bold;
     color: #8e8e8e;
     text-align: center;
-    margin-top: 15px;
+    margin-top: 10px;
     align-items: center;
+    display: flex;
+    margin: 10px 45px 10px;
+    text-align: center;
 ` 
+
+const BlankBorderDiv = styled.div`
+    border-top: 2px solid rgba(var(--b6a,219,219,219),1);
+    width: 108px;
+`
 
 const FaceBookLink = styled.a`
     font-size: 14px;
@@ -116,13 +136,11 @@ const imgStyle = {
 }
 
 let index = 0;   
-    window.onload = function(){
-        slideShow();
-    }
 
 const slideShow = () => {
     let i;
     let x = document.getElementsByClassName("slice");
+    console.log(x);
 
     for(i = 0; i < x.length; i++){
         x[i].style.display = "none"
@@ -141,28 +159,42 @@ const slideShow = () => {
 
 
 const Login = () => {
+
+    useEffect(() => {
+        slideShow();
+    },[])
+
     return (
         <Fragment>
             <MainDiv>
                 <LoginArticle>
                     <ImageDiv>
                         <ImageAnimate>
-                            <img class='slice' src={loginAnimate1} style={imgAniStyle}/>
-                            <img class='slice' src={loginAnimate2} style={imgAniStyle}/>
-                            <img class='slice' src={loginAnimate3} style={imgAniStyle}/>
-                            <img class='slice' src={loginAnimate4} style={imgAniStyle}/>
+                            <img className='slice' src={loginAnimate1} style={imgAniStyle}/>
+                            <img className='slice' src={loginAnimate2} style={imgAniStyle}/>
+                            <img className='slice' src={loginAnimate3} style={imgAniStyle}/>
+                            <img className='slice' src={loginAnimate4} style={imgAniStyle}/>
                         </ImageAnimate>
                     </ImageDiv>
+                    <div style={{width:"38%"}}>
                     <LoginDiv>
                         <img src={loginLogo} style={imgStyle} />
                         <LoginInput placeholder={"전화번호, 사용자 이름 또는 이메일"}/>
                         <LoginInput placeholder={"비밀번호"}/>
                         <LoginButton>로그인</LoginButton>
-                        <BlankDiv>ㅡㅡㅡㅡㅡㅡㅡㅡㅡ 또는 ㅡㅡㅡㅡㅡㅡㅡㅡㅡ</BlankDiv>
+                        <BlankDiv><BlankBorderDiv/>&nbsp;&nbsp;또는&nbsp;&nbsp;<BlankBorderDiv/></BlankDiv> 
                         <img src={FaceBookImage} width='18px' />
                         <FaceBookLink>FaccBook으로 로그인</FaceBookLink><br/><br/>
                         <PassWorkLink>비밀번호를 잊으셨나요?</PassWorkLink>
-                    </LoginDiv>
+                    </LoginDiv>      
+                    <SignDiv>
+                        계정이 없으신가요?&nbsp;
+                        <Link to="/sign" style={{textDecoration: 'none'}}>
+                            <b style={{color: "#0095f6"}}>가입하기</b>
+                        </Link>
+                    </SignDiv>  
+                    <AppDown/>
+                    </div>       
                 </LoginArticle>
             </MainDiv>
             <Footer/>
