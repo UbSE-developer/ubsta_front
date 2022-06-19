@@ -8,14 +8,15 @@
  
  import Login from '../page/login/Login';
  import Main from '../page/main/Main';
-import { BASE_URL, MAIN_URL } from '../Utils/APIConstant';
+ import Sign from '../page/login/Sign'
  
  const Router = () => {
      return (
          <BrowserRouter>
              <Routes>
-                 <Route path= {BASE_URL} element={<Login/>}/>
-                 <Route path= {MAIN_URL} element={<Main/>}/>
+                 <Route path='/' element={<Login/>}/>
+                 <Route path='/main' element={<Main/>}/>
+                 <Route path='/sign' element={<Sign/>}/>
              </Routes>
          </BrowserRouter>
      );
