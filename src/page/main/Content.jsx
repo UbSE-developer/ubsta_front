@@ -17,7 +17,7 @@ const Content = () => {
 
 
     return (
-        <div style={{width : "60%", border:"1px solid", borderColor:"black"}}>
+        <div style={{width : "60%", border:"1px solid", borderColor:"black", minWidth:"500px"}}>
             <div name="writer" style={{blackgroundColor:"white", height:"50px"}}>
                 <span>작성자</span>
             </div>
